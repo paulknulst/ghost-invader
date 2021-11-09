@@ -68,7 +68,7 @@ bullet_state = "ready"
 # Score
 
 score_value = 0
-lifes = 3
+lives = 3
 
 font = pygame.font.Font('freesansbold.ttf', 32)
 
@@ -95,7 +95,7 @@ def show_score(x, y):
 
 
 def show_lifes(x, y):
-    life_text = font.render("Life: " + str(lifes), True, (255, 0, 0))
+    life_text = font.render("Life: " + str(lives), True, (255, 0, 0))
     screen.blit(life_text, (x, y))
 
 
@@ -145,7 +145,7 @@ while running:
                 playerX_change = 0.3
             if event.key == pygame.K_SPACE:
                 if bullet_state is "ready":
-                    # laserSound = mixer.Sound("laser.wav")
+                    # laserSound = mixer.Sound("shot.wav")
                     # laserSound.play()
                     # Get the current x cordinate of the spaceship
                     bulletX = playerX
@@ -167,13 +167,13 @@ while running:
     for i in range(num_of_enemies):
         # Game Over
         if enemyY[i] > 440:
-            if lifes == 0:
+            if lives == 0:
                 for j in range(num_of_enemies):
                     enemyY[j] = 2000
                 game_over_text()
                 break
             else:
-                lifes -= 1
+                lives -= 1
                 reset_enemy(i)
         enemyX[i] += enemyX_change[i]
         if enemyX[i] <= 0:
