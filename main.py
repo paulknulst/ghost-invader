@@ -145,8 +145,8 @@ while running:
                 playerX_change = 0.3
             if event.key == pygame.K_SPACE:
                 if bullet_state is "ready":
-                    bulletSound = mixer.Sound("laser.wav")
-                    bulletSound.play()
+                    # laserSound = mixer.Sound("laser.wav")
+                    # laserSound.play()
                     # Get the current x cordinate of the spaceship
                     bulletX = playerX
                     fire_bullet(bulletX, bulletY)
@@ -186,8 +186,8 @@ while running:
         # Collision
         collision = is_collision(enemyX[i], enemyY[i], bulletX, bulletY)
         if collision:
-            explosionSound = mixer.Sound("explosion.wav")
-            explosionSound.play()
+            # hit_sound = mixer.Sound("hit.wav")
+            # hit_sound.play()
             bulletY = 480
             bullet_state = "ready"
             score_value += 1
